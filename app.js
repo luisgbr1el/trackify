@@ -22,10 +22,10 @@ const cors = require("cors");
 require("dotenv").config();
 
 
-const client_id = process.env.CLIENT_ID
-const client_secret = process.env.CLIENT_SECRET
+const client_id = process.env.CLIENT_ID || process.env['CLIENT_ID']
+const client_secret = process.env.CLIENT_SECRET || process.env['CLIENT_SECRET']
 
-var redirect_uri = process.env.REDIRECT_URI; // Your redirect uri
+var redirect_uri = process.env.REDIRECT_URI || process.env['REDIRECT_URI']; // Your redirect uri
 // var redirect_uri = "http://localhost:3000/callback";
 /**
  * Generates a random string containing numbers and letters
