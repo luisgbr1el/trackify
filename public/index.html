@@ -1,169 +1,80 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Receiptify</title>
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="styles.css" />
-	</head>
-	<body>
-		<div class="container">
-			<div id="login">
-				<div class="header-section">
-					<div class="row">
-						<div class="col-12">
-							<h1>Receiptify</h1>
-							<h2>Top Track Generator</h2>
-						</div>
-						<div class="col-12 col-md-4">
-							<a href="/login" class="login-btn">Log in with Spotify</a>
-						</div>
-					</div>
-				</div>
-								
-				<div class="seperator">
-					<hr />
-				</div>
-				<div class="announcing-text">
-					<span>Announcing</span>
-				</div>
-				<div class="middle-container">
-					<div class="title">New ways to showcase your music</div>
-					<div class="subtitle">Download Anthems app to generate personalized designs based on your Spotify
-						listening</div>
-					<div>
-						<a href="https://bit.ly/3Klpfac">
-							<img class="store-icons"
-							src="assets/img/store-icons.svg" alt="Store icons" />
-						</a>
-					</div>
-					<div>
-						<a href="https://anthems.fm">
-							<img  class="anthems-logo" src="assets/img/logo.svg"
-							alt="Anthems Logo" />
-						</a>
-					</div>
-					<a href="https://bit.ly/3Klpfac">
-						<div class="mixes-promo">
-						</div>
-					</a>
-				</div>
+<html lang="en">
 
-				<p class="info">
-					This website was inspired by the Instagram account <a href="https://www.instagram.com/albumreceipts/">@albumreceipts</a>!</p>
-				</p>
-				<p class="info">
-					Made by <a href="https://michellexliu.me">Michelle Liu</a>. <br />
-					<a href="https://paypal.me/mchelleliu" target="_blank">PayPal</a> |
-					<a href="https://venmo.com/Michelle-Liuu" target="_blank">Venmo</a>
-				</p>
-				<p class="info">
-					*If nothing is happening when you try to log in with Apple Music, it may be because pop-ups are blocked on your browser or device. Enable them and try again!<br />
-					<a href="https://support.google.com/chrome/answer/95472?co=GENIE.Platform%3DiOS&hl=en" target="_blank">Allowing pop-ups in Chrome</a> |
-					<a href="https://kb.wisc.edu/helpdesk/page.php?id=40874" target="_blank">Allowing pop-ups in Safari (iOS)</a>
-				</p>
-			</div>
+<head>
+    <meta charset="UTF-8">
+    <meta lang="en-US">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-			<div id="loggedin">
-				<h1>Receiptify</h1>
-				<h2>Top Track Generator</h2>
-				<div id="options">
-					<button class="time-btn" id="short_term">Last Month</button>
-					<button class="time-btn" id="medium_term">Last 6 Months</button>
-					<button class="time-btn" id="long_term">All Time</button>
-				</div>
-				<div id="receipt"></div>
-			</div>
-		</div>
-		<script id="user-profile-template" type="text/x-handlebars-template">
-			<div class='receiptContainer'>
-				<h2 class='logo'>
-					RECEIPTIFY
-				</h2>
-				<p class='period'>
-					{{period}}
-				</p>
-				<p class='date'>
-					ORDER #000{{num}} FOR {{name}}
-				</p>
-				<p class='date'>
-					{{time}}
-				</p>
-				<table class='tracks'>
-					<thead>
-						<td class='begin'>
-							QTY
-						</td>
-						<td>
-							ITEM
-						</td>
-						<td class='length'>
-							AMT
-						</td>
-					</thead>
-					{{#each tracks}}
-						<tr>
-							<td class='begin'>
-								{{this.id}}
-							</td>
-							<td class='name'>
-								{{this.name}}
-								{{#each this.artists}}
-									<span>
-										{{this.name}}
-									</span>
-								{{/each}}
-							</td>
-							<td class='length'>
-								{{this.duration_ms}}
-							</td>
-						</tr>
-					{{/each}}
-					<tr class='total-counts'>
-						<td class='begin' colspan='2'>
-							ITEM COUNT:
-						</td>
-						<td class='length'>
-							10
-						</td>
-					</tr>
-					<tr class='total-counts-end'>
-						<td class='begin' colspan='2'>
-							TOTAL:
-						</td>
-						<td class='length'>
-							{{total}}
-						</td>
-					</tr>
-				</table>
-				<p class='date'>
-					CARD #: **** **** **** 2021
-				</p>
-				<p class='date'>
-					AUTH CODE: 123421
-				</p>
-				<p class='date'>
-					CARDHOLDER: {{name}}
-				</p>
-				<div class='thanks'>
-					<p>
-						THANK YOU FOR VISITING!
-					</p>
-					<img src='barcode.png' />
-					<p class="website">
-						receiptify.herokuapp.com
-					</p>
-				</div>
-			</div>
-			<button class="time-btn" id="download">Download Image</button>
-		</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
-		<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-		<script src="dom-to-image.min.js"></script>
-		<script src="FileSaver.min.js"></script>
-		<script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
-		<script src="server.js"></script>
-	</body>
+    <title>Trackify</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/loader.css" rel="stylesheet">
+    <link href="styles/responsivity.css" rel="stylesheet">
+    <link href="styles/title.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+</head>
+
+<body onload="onPageLoad()">
+    <div id="header">
+        <p>Trackify</p>
+        <div id="user"></div>
+        <div id="dropdown"></div>
+    </div>
+    <center>
+        <div class="container">
+            <div id="topSection" class="row">
+                <div class="col">  
+
+                    <div id="loadingSection">
+                        <h1 class="animate-charcter">Trackify</h1>
+                        <p style="font-size: 16pt;">Another top track - and artist - generator.</p>
+                        <!-- <div class="lds-ellipsis"><div></div><div></div><div></div></div> -->
+
+                        <div id="tokenSection" class="row">
+                            <div class="col">
+                                <a class="button" href="/login" type="button">Login with Spotify</a><br/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3" id="resume"> 
+                            
+                        <div class="row">                                             
+                            <div id="topTracksList"></div>
+                        </div>
+                        <button class="button" onclick="share('topTracks')" id="shareTopTracks" type="button"></button>
+
+                        <div class="row">                
+                            <div id="topArtistsList"></div>
+                        </div>
+                        <button class="button" onclick="share('topArtists')" id="shareTopArtists" type="button"></button>
+
+                    </div>
+                        
+                </div>
+            </div>
+        </div>
+    </center>
+
+</body>
+<footer>
+    <p>made by <a href="https://github.com" target="_blank">luis gabriel</a></p>
+    <br>
+    <div id="shortcuts">
+        <input id="shortcut" type="button" onclick="aboutModal()" value="about">
+        <p>|</p>
+        <input id="shortcut" type="button" onclick="privacyPolicyModal()" value="privacy policy">
+    </div>
+</footer>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script src="scripts/server.js"></script>
+<script src="scripts/share.js"></script>
+
 </html>

@@ -1,0 +1,58 @@
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #header {
+        height: 5%;
+        text-align: center;
+    }
+
+    #header p {
+        top: 1%;
+    }
+
+    #user {
+        width: 100%;
+        margin-top: 14%;
+    }
+
+    #user:hover + #dropdown{
+        display: flex;
+    }
+
+    #dropdown:hover {
+        display: flex;
+    }
+
+    #dropdown {
+        display: flex;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .container {
+        padding: 0;
+        margin: 0;
+        margin-top: 10%;
+        width: 92%;
+    }
+
+    #topTracksList, #topArtistsList {
+        width: 100%;
+    }
+
+    .button {
+        width: 60%;
+        height: 40%;
+        font-size: 16pt;
+        font-family: 'DM Serif Display', serif;
+    }
+
+    #loadingSection {
+        position: relative;
+        margin-top: 50%;
+        transform: translateY(-50%);
+    }
+  }

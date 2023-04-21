@@ -1,0 +1,256 @@
+/* CSS HEX 
+--black-chocolate: #131200ff;
+--mantis: #78bc61ff;
+--dark-khaki: #c0c781ff;
+--camel: #c59b76ff;
+--salmon: #e9806eff;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');   
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e24;
+    color: aliceblue;
+    font-family: 'DM Serif Display', serif;
+}
+
+#header {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(22, 19, 19);
+}
+
+#user {
+    padding: 10px;
+    width: 15%;
+    background-color: rgb(22, 19, 19);
+    color: aliceblue;
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.headerButton {
+    background-color: transparent;
+    color: aliceblue;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    vertical-align: middle;
+    border: none;
+    width: 100%;
+    text-align: center;
+}
+
+.headerButton:hover {
+    color: #9dbbbb;  
+}
+
+#header p {
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    font-size: 20pt;
+}
+
+#user a {
+    padding: 0;
+    cursor: default;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#user a:hover {
+    color: #9dbbbb; 
+}
+
+#dropdown {
+    display: none;
+    padding: 5px 0 10px 0;
+    background-color: rgb(19, 19, 19);
+    width: 10%;
+    position: absolute;
+    border-radius: 0 0 10px 10px;
+}
+
+#user:hover + #dropdown{
+    display: block;
+}
+
+#dropdown:hover {
+    display: block;
+}
+
+#userPfp {
+    padding: 0;
+    margin: 0 5px 0 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    /* border: 2px solid aliceblue; */
+    display: inline-block;
+}
+
+#user a {
+    padding: 0;
+    margin: 0;
+    color: aliceblue;
+}
+
+#tokenSection{
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+#topSection{
+    display: none;
+}
+
+.container{
+    padding: 0;
+}
+
+.row {
+    display: inline-block;
+}
+
+#albumImage{
+    width: 300px;
+    float: left;
+    margin: 20px;
+}
+
+#trackTitle{
+    font-size:3em;
+}
+
+#trackArtist{
+    font-size:2em;
+}
+
+.welcomeText{
+    font-size:2em;
+}
+
+.track {
+    color: aliceblue;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #9dbbbb;   
+}
+
+#topTracksList, #topArtistsList {
+    margin: 0;
+    padding: 0;
+    width: 40%;
+    border: 1px solid #9dbbbb;
+}
+
+.topTrack, .topArtist {
+    transition: 0.1s;
+    padding: 30px;
+    background-color: #2F4F4F;
+}
+
+hr {
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+}
+
+.topTrack a img, .topTrack a span {
+    display: inline-block;
+}
+
+.topTrack a p, .topArtist a p {
+    margin-left: 10px;
+}
+
+.top {
+    padding: 0;
+    margin: 0;
+    font-weight: bolder;
+    color: #2F4F4F;
+    background-color: aliceblue;
+}
+
+.trackName {
+    display: inline-block;
+    font-size: 19pt;
+    margin: 0;
+    padding: 0;
+}
+
+.topName {
+    display: inline-block;
+    font-size: 25pt;
+    margin: 0;
+    padding: 0;
+}
+
+.artistName {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.button {
+    width: 15%;
+    height: 30px;
+    margin: 20px;
+    padding: 0;
+    margin: 20px;
+    font-size: 12pt;
+    background-color: #2F4F4F;
+    border: 1px #9dbbbb solid;
+    color: aliceblue;
+    font-family: 'Poppins', sans-serif;
+}
+
+.button:hover {
+    color: #9dbbbb;   
+}
+
+#loadingSection {
+    position: relative;
+    margin-top: 25%;
+    transform: translateY(-50%);
+}
+
+footer {
+    margin: 0;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+footer input {
+    background: none;
+    border: none;
+    color: aliceblue;
+}
+
+footer input:hover {
+    color: #9dbbbb;
+}
+
+footer p {
+    padding: 0;
+    margin: 0;
+}
+
+footer * {
+    display: inline-block;
+}
