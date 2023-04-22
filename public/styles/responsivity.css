@@ -45,7 +45,8 @@
     }
 
     .button {
-        width: 65%;
+        width: 40%;
+        padding: 5px;
         height: 40%;
         font-size: 16pt;
         font-family: 'DM Serif Display', serif;

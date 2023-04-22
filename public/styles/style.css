@@ -144,6 +144,7 @@ body {
 
 a {
     text-decoration: none;
+    color: #798d8d;
 }
 
 a:hover {
@@ -224,13 +225,14 @@ hr {
     width: 15%;
     height: 30px;
     line-height: 30px;
-    margin: 20px;
+    margin: 0;
     padding: 0;
     margin: 20px;
     font-size: 12pt;
     background-color: #2F4F4F;
     border: 1px #9dbbbb solid;
     color: aliceblue;
+    text-align: center;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -269,4 +271,17 @@ footer p {
 
 footer * {
     display: inline-block;
+}
+
+.close-modal-button {
+    background: none;
+    border: none;
+    color: aliceblue;
+    font-size: 20pt;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-body {
+    font-family: 'Poppins', sans-serif;
 }
