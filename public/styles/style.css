@@ -7,7 +7,8 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');   
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+
 
 body {
     margin: 0;
@@ -31,6 +32,7 @@ body {
     font-family: 'Poppins', sans-serif;
     display: inline-block;
     vertical-align: middle;
+    line-height: 100%;
 }
 
 .headerButton {
@@ -159,6 +161,13 @@ a:hover {
     padding: 20px;
     background-color: #2F4F4F;
     text-align: right;
+    background-repeat: no-repeat;
+    background-size: 200px;
+    border: none;
+}
+
+.topArtist {
+    background-size: 150px;
 }
 
 hr {
@@ -214,6 +223,7 @@ hr {
 .button {
     width: 15%;
     height: 30px;
+    line-height: 30px;
     margin: 20px;
     padding: 0;
     margin: 20px;

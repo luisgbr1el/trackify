@@ -41,10 +41,11 @@
 
     #topTracksList, #topArtistsList {
         width: 100%;
+        overflow: hidden;
     }
 
     .button {
-        width: 60%;
+        width: 65%;
         height: 40%;
         font-size: 16pt;
         font-family: 'DM Serif Display', serif;
@@ -52,7 +53,7 @@
 
     #loadingSection {
         position: relative;
-        margin-top: 50%;
+        margin-top: 80%;
         transform: translateY(-50%);
     }
   }

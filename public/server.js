@@ -54,8 +54,7 @@ function onPageLoad() {
 }
 
 function logout() {
-  // localStorage.clear();
-  window.location.reload();
+  window.location.href = '/';
 }
 
 function handleRedirect() {
@@ -168,7 +167,7 @@ function handleTopTracksResponse() {
     tracks.forEach((track) => htmlText +=
       `
         
-        <div class="topTrack" style="background-image: linear-gradient(to right, #2f4f4f6e, #2F4F4F), url(${track.image}); background-repeat: no-repeat; background-size: 200px; border: none;">
+        <div class="topTrack" style="background-image: linear-gradient(to right, #2f4f4f6e, #2F4F4F), url(${track.image});">
             <a class="track" href="${track.url}" target="_blank">
                 
                 <span class="info">
@@ -217,7 +216,7 @@ function handleTopArtistsResponse() {
     artists.forEach((artist) => htmlText +=
       `
         
-        <div class="topArtist" style="background-image: linear-gradient(to right, #2f4f4f6e, #2F4F4F), url(${artist.image}); background-repeat: no-repeat; background-size: 150px; border: none;">
+        <div class="topArtist" style="background-image: linear-gradient(to right, #2f4f4f6e, #2F4F4F), url(${artist.image});">
             <a class="track" href="${artist.url}" target="_blank">
                 <p class="trackName">${artist.name}</p>   
             </a>
