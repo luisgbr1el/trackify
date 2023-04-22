@@ -152,13 +152,13 @@ a:hover {
     margin: 0;
     padding: 0;
     width: 40%;
-    border: 1px solid #9dbbbb;
 }
 
 .topTrack, .topArtist {
     transition: 0.1s;
-    padding: 30px;
+    padding: 20px;
     background-color: #2F4F4F;
+    text-align: right;
 }
 
 hr {
@@ -188,6 +188,12 @@ hr {
     font-size: 19pt;
     margin: 0;
     padding: 0;
+}
+
+.position {
+    position: relative;
+    text-align: left;
+    font-size: 16pt;
 }
 
 .topName {

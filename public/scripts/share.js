@@ -45,8 +45,7 @@ async function share(type) {
   if (type == "topTracks") {
     html2canvas(document.querySelector("#topTracksList"), {
         useCORS: true,
-        taintTest: false,
-        allowTaint: false
+        allowTaint: true
     }).then(async (canvas) => {
         var ctx = canvas.getContext('2d');
 

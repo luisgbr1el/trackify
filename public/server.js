@@ -167,8 +167,8 @@ function handleTopTracksResponse() {
         `;
     tracks.forEach((track) => htmlText +=
       `
-        <hr>
-        <div class="topTrack" style="background-image: linear-gradient(to right, #2f4f4f6e, #2F4F4F), url(${track.image}); background-repeat: no-repeat; background-size: 200px;">
+        
+        <div class="topTrack" style="background-image: linear-gradient(to right, #2f4f4f6e, #2F4F4F), url(${track.image}); background-repeat: no-repeat; background-size: 200px; border: none;">
             <a class="track" href="${track.url}" target="_blank">
                 
                 <span class="info">
@@ -216,10 +216,10 @@ function handleTopArtistsResponse() {
         `;
     artists.forEach((artist) => htmlText +=
       `
-        <hr>
-        <div class="topArtist" style="background-image: linear-gradient(to right, #2f4f4f6e, #2F4F4F), url(${artist.image}); background-repeat: no-repeat; background-size: 200px;">
+        
+        <div class="topArtist" style="background-image: linear-gradient(to right, #2f4f4f6e, #2F4F4F), url(${artist.image}); background-repeat: no-repeat; background-size: 150px; border: none;">
             <a class="track" href="${artist.url}" target="_blank">
-                <p class="trackName">${position++}. ${artist.name}</p>   
+                <p class="trackName">${artist.name}</p>   
             </a>
         </div>
         `);
