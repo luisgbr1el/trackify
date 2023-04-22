@@ -218,7 +218,7 @@ function handleTopArtistsResponse() {
         
         <div class="topArtist" style="background-image: linear-gradient(to right, #2f4f4f6e, #2F4F4F), url(${artist.image});">
             <a class="track" href="${artist.url}" target="_blank">
-                <p class="trackName">${artist.name}</p>   
+                <p class="trackName">${position++}. ${artist.name}</p>   
             </a>
         </div>
         `);
