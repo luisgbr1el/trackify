@@ -1,7 +1,7 @@
 {
   "name": "trackify",
   "version": "1.0.0",
-  "description": "Genereates receipts based on a user's spotify listening history.",
+  "description": "Trackify is a tool that displays user's top 5 most played tracks and artists from the last month in a cool way that you can share with your friends.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
