@@ -24,15 +24,10 @@ const TOPARTISTS = "https://api.spotify.com/v1/me/top/artists";
 const USER = "https://api.spotify.com/v1/me";
 
 function onPageLoad() {
-  // client_id = localStorage.getItem("client_id");
-  // client_secret = localStorage.getItem("client_secret");
-
   if (window.location.search.length > 0) {
     handleRedirect();
   }
   else {
-    // access_token = localStorage.getItem("access_token");
-
     document.getElementById("topSection").style.display = 'block';
     if (access_token == null) {
       document.getElementById("tokenSection").style.display = 'block';
@@ -41,12 +36,12 @@ function onPageLoad() {
       document.getElementById("dropdown").style.display = "none";
     }
     else {
-      document.getElementById("topSection").style.display = 'block';
-      document.getElementById("loadingSection").style.display = "none";
-
       user();
       topTracks();
       topArtists();
+
+      document.getElementById("topSection").style.display = 'block';
+      document.getElementById("loadingSection").style.display = "none";
     }
   }
 }
@@ -58,7 +53,7 @@ function logout() {
 function handleRedirect() {
   let code = getCode();
   fetchAccessToken(code);
-  window.history.pushState("", "", redirect_uri); // remove param from url
+  window.history.pushState("", "", redirect_uri);
 }
 
 function getCode() {
@@ -78,7 +73,7 @@ function requestAuthorization() {
   url += "&redirect_uri=" + encodeURI(redirect_uri);
   url += "&show_dialog=true";
   url += "&scope=user-read-private user-read-email user-top-read";
-  window.location.href = url; // Show Spotify's authorization screen
+  window.location.href = url;
 }
 
 function fetchAccessToken(code) {
@@ -91,7 +86,6 @@ function fetchAccessToken(code) {
 }
 
 function refreshAccessToken() {
-  //refresh_token = localStorage.getItem("refresh_token");
   let body = "grant_type=refresh_token";
   body += "&refresh_token=" + refresh_token;
   body += "&client_id=" + client_id;
@@ -114,11 +108,9 @@ function handleAuthorizationResponse() {
     var data = JSON.parse(this.responseText);
     if (data.access_token != undefined) {
       access_token = data.access_token;
-      // localStorage.setItem("access_token", access_token);
     }
     if (data.refresh_token != undefined) {
       refresh_token = data.refresh_token;
-      // localStorage.setItem("refresh_token", refresh_token);
     }
     onPageLoad();
   }
