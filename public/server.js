@@ -126,7 +126,7 @@ function handleAuthorizationResponse() {
   }
   else {
     console.log(this.responseText);
-    //window.location.reload();
+    window.location.href = "/";
   }
 }
 
@@ -160,16 +160,14 @@ function handleTopTracksResponse() {
         <div class="top">
             <center>
                 <p class="topName">top tracks</p>
-                <p class="artistName">(last 4 weeks)</p>
+                <p class="artistName">(last month)</p>
             </center>
         </div>
         `;
     tracks.forEach((track) => htmlText +=
-      `
-        
+      `   
         <div class="topTrack" style="background-image: linear-gradient(to right, #2f4f4f6e, #2F4F4F), url(${track.image});">
-            <a class="track" href="${track.url}" target="_blank">
-                
+            <a class="track" href="${track.url}" target="_blank">               
                 <span class="info">
                     <p class="trackName">${position++}. ${track.name}</p><br>   
                     <p class="artistName">${track.artist}</p>
@@ -181,7 +179,8 @@ function handleTopTracksResponse() {
     document.getElementById("topTracksList").innerHTML = htmlText;
   }
   else if (this.status == 401) {
-    refreshAccessToken()
+    //refreshAccessToken()
+    window.location.href = '/';
   }
   else {
     console.log(this);
@@ -209,7 +208,7 @@ function handleTopArtistsResponse() {
         <div class="top">
             <center>
                 <p class="topName">top artists</p>
-                <p class="artistName">(last 4 weeks)</p>
+                <p class="artistName">(last month)</p>
             </center>
         </div>
         `;
@@ -226,7 +225,8 @@ function handleTopArtistsResponse() {
     document.getElementById("topArtistsList").innerHTML = htmlText;
   }
   else if (this.status == 401) {
-    refreshAccessToken()
+    //refreshAccessToken()
+    window.location.href = "/";
   }
   else {
     console.log(this);
@@ -256,7 +256,8 @@ function handleUserResponse() {
     document.getElementById("dropdown").innerHTML = dropdownDiv;
   }
   else if (this.status == 401) {
-    refreshAccessToken()
+    //refreshAccessToken()
+    window.location.href = '/';
   }
   else {
     console.log(this);
