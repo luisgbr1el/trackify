@@ -11,7 +11,7 @@ body {
 
 #header {
     margin: 0;
-    padding: 0;
+    padding-bottom: 5px;
     background-color: rgb(22, 19, 19);
 }
 
@@ -41,12 +41,15 @@ body {
     color: #9dbbbb;  
 }
 
-#header p {
-    top: 2px;
+#home {
     left: 50%;
+    top: 0;
     transform: translateX(-50%);
     position: absolute;
     font-size: 20pt;
+    color: aliceblue;
+    margin: 0;
+    padding: 0;
 }
 
 #user a {
@@ -75,16 +78,6 @@ body {
 
 #dropdown:hover {
     display: block;
-}
-
-#userPfp {
-    padding: 0;
-    margin: 0 5px 0 0;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    /* border: 2px solid aliceblue; */
-    display: inline-block;
 }
 
 #user a {

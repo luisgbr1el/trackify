@@ -138,12 +138,11 @@ function handleTopTracksResponse() {
       tracks.push({
         name: item.name,
         artist: item.artists[0].name,
-        image: item.album.images[0].url,
         url: item.external_urls.spotify
       })
     });
 
-    topList("top tracks", "(last month)", tracks, "topTracksList", "right", "#2f4f4f6e", "#2F4F4F", "200px");
+    topList("top tracks", "(last month)", tracks, "topTracksList", "#2F4F4F");
   }
   else if (this.status == 401) {
     //refreshAccessToken()
@@ -163,12 +162,11 @@ function handleTopArtistsResponse() {
     data.items.forEach((item, index) => {
       artists.push({
         name: item.name,
-        image: item.images[0].url,
         url: item.external_urls.spotify
       })
     });
 
-    topList("top artists", "(last month)", artists, "topArtistsList", "right", "#2f4f4f6e", "#2F4F4F", "150px");
+    topList("top artists", "(last month)", artists, "topArtistsList", "#2F4F4F");
   }
   else if (this.status == 401) {
     //refreshAccessToken()
@@ -184,12 +182,11 @@ function handleUserResponse() {
   if (this.status == 200) {
     var data = JSON.parse(this.responseText);
 
-    userDiv = `
-        <img id="userPfp" src="${data.images[0].url}">
-        <a>
-            ${data.display_name}
-        </a>
-        `;
+    userDiv = `        
+      <a>
+        ${data.display_name}
+      </a>
+    `;
 
     document.getElementById("user").innerHTML = userDiv;
 

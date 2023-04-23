@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     font-weight: bolder;
-    color: #2F4F4F;
     background-color: aliceblue;
 }
 
@@ -24,7 +23,7 @@
 .topItem {
     transition: 0.1s;
     padding: 20px;
-    text-align: right;
+    text-align: left;
     background-repeat: no-repeat;
     border: none;
 }
