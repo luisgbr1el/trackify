@@ -72,7 +72,7 @@ function requestAuthorization() {
   url += "&response_type=code";
   url += "&redirect_uri=" + encodeURI(redirect_uri);
   url += "&show_dialog=true";
-  url += "&scope=user-read-private user-read-email user-top-read";
+  url += "&scope=user-read-email user-top-read";
   window.location.href = url;
 }
 
