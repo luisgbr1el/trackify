@@ -18,6 +18,7 @@
     <link href="styles/loader.css" rel="stylesheet">
     <link href="styles/responsivity.css" rel="stylesheet">
     <link href="styles/title.css" rel="stylesheet">
+    <link href="styles/toplist.css" rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -30,45 +31,45 @@
     
     <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog" role="document">
-        <div class="modal-content bg-dark">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">About</h5>
-            <button type="button" class="close close-modal-button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">About</h5>
+                    <button type="button" class="close close-modal-button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Inspired by <a href="https://receiptify.herokuapp.com" target="_blank">Receiptify</a>, <b>Trackify</b> is a tool that displays user's top 5 most played tracks and artists from the last month in a cool way that you can share with your friends. :)
+                    <br><br>
+                    <b>Trackify</b> is an open source app, so you can contribute with the project clicking in the button below!
+                </div>
+                <div class="modal-footer">
+                <a type="button" class="button" href="https://github.com/luisgbr1el/trackify" target="_blank">GitHub</a>
+                </div>
             </div>
-            <div class="modal-body">
-                Inspired by <a href="https://receiptify.herokuapp.com" target="_blank">Receiptify</a>, <b>Trackify</b> is a tool that displays user's top 5 most played tracks and artists from the last month in a cool way that you can share with your friends. :)
-                <br><br>
-                <b>Trackify</b> is an open source app, so you can contribute with the project clicking in the button below!
-            </div>
-            <div class="modal-footer">
-            <a type="button" class="button" href="https://github.com/luisgbr1el/trackify" target="_blank">GitHub</a>
-            </div>
-        </div>
         </div>
     </div>
 
     <div class="modal fade" id="privacyPolicyModal" tabindex="-1" role="dialog" aria-labelledby="privacyPolicyModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog" role="document">
-        <div class="modal-content bg-dark">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Privacy Policy</h5>
-            <button type="button" class="close close-modal-button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Privacy Policy</h5>
+                    <button type="button" class="close close-modal-button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <b>Trackify</b> was developed as an open source app powered by Spotify Web API. Using this app, you agree to the use of your Spotify account username and data for your top artists and tracks.
+                    <br><br>
+                    <b>None</b> of the data used by <b>Trackify</b> is stored, collected or shared. All the information <b>is used only to display your list</b>.
+                    <br><br>
+                    Although, if you would like to revoke <b>Trackify</b>'s permissions, you can visit <a href="https://www.spotify.com/account/apps/">your apps page</a> and click "Remove Access" on <b>Trackify</b>.
+                </div>
+                <div class="modal-footer">
+                <a type="button" class="button" href="https://developer.spotify.com/documentation/web-api" target="_blank">Docs</a>
+                </div>
             </div>
-            <div class="modal-body">
-                <b>Trackify</b> was developed as an open source app powered by Spotify Web API. Using this app, you agree to the use of your Spotify account username and data for your top artists and tracks.
-                <br><br>
-                <b>None</b> of the data used by <b>Trackify</b> is stored, collected or shared. All the information <b>is used only to display your list</b>.
-                <br><br>
-                Although, if you would like to revoke <b>Trackify</b>'s permissions, you can visit <a href="https://www.spotify.com/account/apps/">your apps page</a> and click "Remove Access" on <b>Trackify</b>.
-            </div>
-            <div class="modal-footer">
-            <a type="button" class="button" href="https://developer.spotify.com/documentation/web-api" target="_blank">Docs</a>
-            </div>
-        </div>
         </div>
     </div>
 
@@ -127,6 +128,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js" integrity="sha512-sn/GHTj+FCxK5wam7k9w4gPPm6zss4Zwl/X9wgrvGMFbnedR8lTUSLdsolDRBRzsX6N+YgG6OWyvn9qaFVXH9w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="scripts/toplist.js"></script>
 <script src="server.js"></script>
 <script src="scripts/share.js"></script>
 </html>

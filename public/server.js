@@ -1,25 +1,23 @@
-
-  var today = new Date();
-  function getHashParams() {
-    var hashParams = {};
-    var e,
-      r = /([^&;=]+)=?([^&;]*)/g,
-      q = window.location.hash.substring(1);
-    while ((e = r.exec(q))) {
-      hashParams[e[1]] = decodeURIComponent(e[2]);
-    }
-    return hashParams;
+function getHashParams() {
+  var hashParams = {};
+  var e,
+    r = /([^&;=]+)=?([^&;]*)/g,
+    q = window.location.hash.substring(1);
+  while ((e = r.exec(q))) {
+    hashParams[e[1]] = decodeURIComponent(e[2]);
   }
+  return hashParams;
+}
 
   let params = getHashParams();
 
-  let access_token = params.access_token,
-    client_secret = params.client_secret,
-    dev_token = params.dev_token,
-    client = params.client,
-    error = params.error;
+let access_token = params.access_token,
+  client_secret = params.client_secret,
+  dev_token = params.dev_token,
+  client = params.client,
+  error = params.error;
 
-    const AUTHORIZE = "https://accounts.spotify.com/authorize";
+const AUTHORIZE = "https://accounts.spotify.com/authorize";
 const TOKEN = "https://accounts.spotify.com/api/token";
 const TOPTRACKS = "https://api.spotify.com/v1/me/top/tracks";
 const TOPARTISTS = "https://api.spotify.com/v1/me/top/artists";
@@ -142,10 +140,7 @@ function callApi(method, url, body, callback) {
 function handleTopTracksResponse() {
   if (this.status == 200) {
     var data = JSON.parse(this.responseText);
-
     let tracks = [];
-    let htmlText = "";
-    let position = 1;
 
     data.items.forEach((item, index) => {
       tracks.push({
@@ -156,27 +151,7 @@ function handleTopTracksResponse() {
       })
     });
 
-    htmlText += `
-        <div class="top">
-            <center>
-                <p class="topName">top tracks</p>
-                <p class="artistName">(last month)</p>
-            </center>
-        </div>
-        `;
-    tracks.forEach((track) => htmlText +=
-      `   
-        <div class="topTrack" style="background-image: linear-gradient(to right, #2f4f4f6e, #2F4F4F), url(${track.image});">
-            <a class="track" href="${track.url}" target="_blank">               
-                <span class="info">
-                    <p class="trackName">${position++}. ${track.name}</p><br>   
-                    <p class="artistName">${track.artist}</p>
-                </span>
-            </a>
-        </div>       
-        `);
-
-    document.getElementById("topTracksList").innerHTML = htmlText;
+    topList("top tracks", "(last month)", tracks, "topTracksList", "right", "#2f4f4f6e", "#2F4F4F", "200px");
   }
   else if (this.status == 401) {
     //refreshAccessToken()
@@ -191,10 +166,7 @@ function handleTopTracksResponse() {
 function handleTopArtistsResponse() {
   if (this.status == 200) {
     var data = JSON.parse(this.responseText);
-
     let artists = [];
-    let htmlText = "";
-    let position = 1;
 
     data.items.forEach((item, index) => {
       artists.push({
@@ -204,25 +176,7 @@ function handleTopArtistsResponse() {
       })
     });
 
-    htmlText += `
-        <div class="top">
-            <center>
-                <p class="topName">top artists</p>
-                <p class="artistName">(last month)</p>
-            </center>
-        </div>
-        `;
-    artists.forEach((artist) => htmlText +=
-      `
-        
-        <div class="topArtist" style="background-image: linear-gradient(to right, #2f4f4f6e, #2F4F4F), url(${artist.image});">
-            <a class="track" href="${artist.url}" target="_blank">
-                <p class="trackName">${position++}. ${artist.name}</p>   
-            </a>
-        </div>
-        `);
-
-    document.getElementById("topArtistsList").innerHTML = htmlText;
+    topList("top artists", "(last month)", artists, "topArtistsList", "right", "#2f4f4f6e", "#2F4F4F", "150px");
   }
   else if (this.status == 401) {
     //refreshAccessToken()
