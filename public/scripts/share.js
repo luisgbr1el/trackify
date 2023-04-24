@@ -48,12 +48,12 @@ async function share(type) {
         taintTest: false,
         allowTaint: false
     }).then(async (canvas) => {
-        var ctx = canvas.getContext('2d');
+//         var ctx = canvas.getContext('2d');
 
-        ctx.font = "14px Arial";
-        ctx.fillStyle = "aliceblue";
-        ctx.textAlign = "center";
-        ctx.fillText("thetrackify.vercel.app", canvas.width + 385, canvas.height + 55);
+//         ctx.font = "14px Arial";
+//         ctx.fillStyle = "aliceblue";
+//         ctx.textAlign = "center";
+//         ctx.fillText("thetrackify.vercel.app", canvas.width + 385, canvas.height + 55);
 
         //document.body.appendChild(canvas)
         dataUrl = canvas.toDataURL();
@@ -67,12 +67,12 @@ async function share(type) {
         taintTest: false,
         allowTaint: false
     }).then(async (canvas) => {
-        var ctx = canvas.getContext('2d');
+//         var ctx = canvas.getContext('2d');
 
-        ctx.font = "14px Arial";
-        ctx.fillStyle = "aliceblue";
-        ctx.textAlign = "center";
-        ctx.fillText("thetrackify.vercel.app", canvas.width + 500, canvas.height + 1);
+//         ctx.font = "14px Arial";
+//         ctx.fillStyle = "aliceblue";
+//         ctx.textAlign = "center";
+//         ctx.fillText("thetrackify.vercel.app", canvas.width + 500, canvas.height + 1);
 
         //document.body.appendChild(canvas)
         dataUrl = canvas.toDataURL();
