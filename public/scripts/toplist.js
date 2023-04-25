@@ -11,7 +11,8 @@ function topList(title = String, info = String, arr = Array, divId = String, col
     </div>
   `;
   
-  arr.forEach((item) => htmlText += `   
+  if (arr.length >= 1) {
+      arr.forEach((item) => htmlText += `   
     <div class="topItem" style="background-image: linear-gradient(to right, #111a1a6e, ${color}); background-color: ${color};">
       <a class="track" href="${item.url}" target="_blank">               
         <span class="info">
@@ -21,6 +22,15 @@ function topList(title = String, info = String, arr = Array, divId = String, col
       </a>
     </div>       
   `);
+  }
+  else {
+    htmlText += `   
+    <div class="topItem" style="background-image: linear-gradient(to right, #111a1a6e, ${color}); background-color: ${color};">
+      <p>You don't have sufficient data to generate your list. :(</p>
+    </div>       
+  `
+  }
+
       
   document.getElementById(divId).innerHTML = htmlText;
 }
