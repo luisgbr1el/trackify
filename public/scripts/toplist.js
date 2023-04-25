@@ -30,7 +30,6 @@ function topList(title = String, info = String, arr = Array, divId = String, col
     </div>       
   `
   }
-
-      
+    
   document.getElementById(divId).innerHTML = htmlText;
 }
