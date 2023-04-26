@@ -180,3 +180,7 @@ footer * {
 .modal-body {
     font-family: 'Poppins', sans-serif;
 }
+
+.btn-group {
+  width: 20%;
+}

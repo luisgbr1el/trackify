@@ -95,18 +95,19 @@
                     </div>
 
                     <div class="row mt-3" id="resume"> 
+                      <button class="button" onclick="logout()" id="logout" type="button">Logout</button>                 
                             
-                        <div class="row">    
-                          <button class="button" onclick="logout()" id="logout" type="button">Logout</button>
+                        <div id="topTracksDiv" class="row">    
+                          
                           <div id="topTracksList"></div>
+                          <button class="button" onclick="share('topTracks')" id="shareTopTracks" type="button"></button>
                         </div>
-                        <button class="button" onclick="share('topTracks')" id="shareTopTracks" type="button"></button>
-
-                        <div class="row">                
+                        
+                        <div id="topArtistsDiv" class="row">                
                             <div id="topArtistsList"></div>
+                          <button class="button" onclick="share('topArtists')" id="shareTopArtists" type="button"></button>
                         </div>
-                        <button class="button" onclick="share('topArtists')" id="shareTopArtists" type="button"></button>
-
+                        
                     </div>
                         
                 </div>
@@ -129,6 +130,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js" integrity="sha512-sn/GHTj+FCxK5wam7k9w4gPPm6zss4Zwl/X9wgrvGMFbnedR8lTUSLdsolDRBRzsX6N+YgG6OWyvn9qaFVXH9w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="scripts/toplist.js"></script>
+<script src="scripts/buttonGroup.js"></script>
 <script src="server.js"></script>
 <script src="scripts/share.js"></script>
 </html>
