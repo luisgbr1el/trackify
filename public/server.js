@@ -9,7 +9,7 @@ function getHashParams() {
   return hashParams;
 }
 
-  let params = getHashParams();
+let params = getHashParams();
 
 let access_token = params.access_token,
   client_secret = params.client_secret,
@@ -47,7 +47,16 @@ function onPageLoad() {
 }
 
 function logout() {
-  window.location.href = '/';
+  const url = 'https://accounts.spotify.com/logout';
+  const spotifyLogoutWindow = window.open(
+    url,
+    'Spotify Logout',
+    'width=700,height=500,top=40,left=40'
+  );
+  setTimeout(() => {
+    spotifyLogoutWindow.close();
+    location.href = '/';
+  }, 2000);
 }
 
 function handleRedirect() {
@@ -183,20 +192,12 @@ function handleUserResponse() {
     var data = JSON.parse(this.responseText);
 
     userDiv = `        
-      <a>
+      <a href="${data.external_urls.spotify}" target="_blank">
         ${data.display_name}
       </a>
     `;
 
     document.getElementById("user").innerHTML = userDiv;
-
-    dropdownDiv = `
-        <a type="button" class="headerButton" href="${data.external_urls.spotify}" target="_blank">Profile</a>
-        <hr>
-        <input type="button" class="headerButton" onclick="logout()" value="Logout"> 
-        `;
-
-    document.getElementById("dropdown").innerHTML = dropdownDiv;
   }
   else if (this.status == 401) {
     //refreshAccessToken()

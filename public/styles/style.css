@@ -63,27 +63,11 @@ body {
     color: #9dbbbb; 
 }
 
-#dropdown {
-    display: none;
-    padding: 5px 0 10px 0;
-    background-color: rgb(19, 19, 19);
-    width: 10%;
-    position: absolute;
-    border-radius: 0 0 10px 10px;
-}
-
-#user:hover + #dropdown{
-    display: block;
-}
-
-#dropdown:hover {
-    display: block;
-}
-
 #user a {
     padding: 0;
     margin: 0;
     color: aliceblue;
+    cursor: pointer;
 }
 
 #tokenSection{

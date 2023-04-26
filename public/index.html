@@ -76,7 +76,6 @@
     <div id="header">
         <a href="/" id="home">Trackify</a>
         <div id="user"></div>
-        <div id="dropdown"></div>
     </div>
     <center>
         <div class="container">
@@ -97,8 +96,9 @@
 
                     <div class="row mt-3" id="resume"> 
                             
-                        <div class="row">                                             
-                            <div id="topTracksList"></div>
+                        <div class="row">    
+                          <button class="button" onclick="logout()" id="logout" type="button">Logout</button>
+                          <div id="topTracksList"></div>
                         </div>
                         <button class="button" onclick="share('topTracks')" id="shareTopTracks" type="button"></button>
 
