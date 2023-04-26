@@ -30,6 +30,13 @@ function topList(title = String, info = String, arr = Array, divId = String, col
     </div>       
   `
   }
-    
+
+  htmlText += `
+    <div class="bottom" style="color: ${color};">
+        <center>
+            <img src='../assets/Spotify_Logo_RGB_Black.png' width='100px'>
+        </center>
+    </div>
+  `;
   document.getElementById(divId).innerHTML = htmlText;
 }

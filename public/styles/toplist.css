@@ -5,6 +5,13 @@
     background-color: aliceblue;
 }
 
+.bottom {
+    padding: 10px;
+    margin: 0;
+    font-weight: bolder;
+    background-color: aliceblue;
+}
+
 .topName {
     display: inline-block;
     font-size: 25pt;
