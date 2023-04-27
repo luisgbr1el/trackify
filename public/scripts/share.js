@@ -46,7 +46,7 @@ async function share(divId, filename) {
         useCORS: true,
         taintTest: false,
         allowTaint: false,
-        backgroundColor: null
+        backgroundColor: "#F0F8FF"
     }).then(async (canvas) => {
 
         //document.body.appendChild(canvas)
