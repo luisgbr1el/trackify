@@ -33,7 +33,6 @@ function onPageLoad() {
       document.getElementById("tokenSection").style.display = 'block';
       document.getElementById("resume").style.display = "none";
       document.getElementById("user").style.display = "none";
-      document.getElementById("dropdown").style.display = "none";
     }
     else {
       user();
