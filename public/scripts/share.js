@@ -45,15 +45,9 @@ async function share(divId, filename) {
     html2canvas(document.querySelector(`#${divId}`), {
         useCORS: true,
         taintTest: false,
-        allowTaint: false
+        allowTaint: false,
+        backgroundColor: null
     }).then(async (canvas) => {
-        //var ctx = canvas.getContext('2d');
-        //ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-//         ctx.font = "14px Arial";
-//         ctx.fillStyle = "aliceblue";
-//         ctx.textAlign = "center";
-//         ctx.fillText("thetrackify.vercel.app", canvas.width + 385, canvas.height + 55);
 
         //document.body.appendChild(canvas)
         dataUrl = canvas.toDataURL();

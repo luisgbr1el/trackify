@@ -32,6 +32,11 @@ function topList(title = String, info = String, arr = Array, divId = String, col
   }
 
   htmlText += `
+    <div class="topItem" style="padding: 2px; margin: 0; background-image: linear-gradient(to right, #111a1a6e, ${color}); background-color: ${color};">
+        <center>
+            thetrackify.vercel.app
+        </center>
+    </div>     
     <div class="bottom" style="color: ${color};">
         <center>
             <img src='../assets/Spotify_Logo_RGB_Black.png' width='100px'>
