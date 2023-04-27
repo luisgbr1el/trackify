@@ -102,6 +102,7 @@ a:hover {
     padding: 0;
     width: 40%;
     border: 1px solid aliceblue;
+    /*border-radius: 10px;*/
 }
 
 hr {

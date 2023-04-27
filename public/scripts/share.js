@@ -41,14 +41,14 @@ const shareOrDownload = async (blob, fileName) => {
   a.click();
 }
 
-async function share(type) {
-  if (type == "topTracks") {
-    html2canvas(document.querySelector("#topTracksList"), {
+async function share(divId, filename) {
+    html2canvas(document.querySelector(`#${divId}`), {
         useCORS: true,
         taintTest: false,
         allowTaint: false
     }).then(async (canvas) => {
-//         var ctx = canvas.getContext('2d');
+        //var ctx = canvas.getContext('2d');
+        //ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 //         ctx.font = "14px Arial";
 //         ctx.fillStyle = "aliceblue";
@@ -58,26 +58,6 @@ async function share(type) {
         //document.body.appendChild(canvas)
         dataUrl = canvas.toDataURL();
         const blob = await fetch(dataUrl).then(res => res.blob());
-        await shareOrDownload(blob, "toptracks.png");           
+        await shareOrDownload(blob, `${filename}.png`);           
         });
-  }
-  else if (type == "topArtists") {
-    html2canvas(document.querySelector("#topArtistsList"), {
-        useCORS: true,
-        taintTest: false,
-        allowTaint: false
-    }).then(async (canvas) => {
-//         var ctx = canvas.getContext('2d');
-
-//         ctx.font = "14px Arial";
-//         ctx.fillStyle = "aliceblue";
-//         ctx.textAlign = "center";
-//         ctx.fillText("thetrackify.vercel.app", canvas.width + 500, canvas.height + 1);
-
-        //document.body.appendChild(canvas)
-        dataUrl = canvas.toDataURL();
-        const blob = await (await fetch(dataUrl)).blob();
-        shareOrDownload(blob, "topartists.png");           
-    });
-  }
 }
