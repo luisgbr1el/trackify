@@ -102,7 +102,7 @@ a:hover {
     padding: 0;
     width: 40%;
     border: 1px solid #2F4F4F;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 hr {
