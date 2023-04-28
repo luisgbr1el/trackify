@@ -38,7 +38,17 @@ function onPageLoad() {
       user();
       topTracks();
       topArtists();
-      selector("selectTheme", [ 'jade green', 'purple' ]);
+      
+      selector("selectThemeDiv", "Select theme", "selectTheme", [
+        {
+          color: "dark slate gray",
+          id: 0
+        },
+        {
+          color: "purple",
+          id: 1
+        }
+      ]);
 
       document.getElementById("topSection").style.display = 'block';
       document.getElementById("loadingSection").style.display = "none";

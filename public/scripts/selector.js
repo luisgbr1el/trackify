@@ -1,12 +1,25 @@
-function selector(selectId = String, options = Array) {
-  var select = document.getElementById(selectId);
-  var htmlText = '';
+function selector(divId = String, label = String, selectId = String, options = Array) {  
+  // indentifying the div by id
+  var div = document.getElementById(divId);
 
+  // creating label to selector
+  var labelText = document.createElement("label");
+  labelText.className = "selectLabel";
+  labelText.htmlFor = selectId;
+  labelText.textContent = label;
+  div.appendChild(labelText);
+
+  // creating selector
+  var select = document.createElement("select");
+  select.id = selectId;
+  select.className = "selector";
+  div.appendChild(select);
+
+  // creating options to selector
   options.forEach((option) => {
-    htmlText += `
-      <option id='${option}'>${option}</option>
-    `;
+    var newOption = document.createElement("option");
+    newOption.value = option.id;
+    newOption.text = option.color;
+    select.appendChild(newOption);
   })
-
-  select.innerHTML = htmlText;
 }
