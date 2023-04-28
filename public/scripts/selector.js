@@ -18,7 +18,7 @@ function selector(divId = String, label = String, selectId = String, options = A
   // creating options to selector
   options.forEach((option) => {
     var newOption = document.createElement("option");
-    newOption.value = option.id;
+    newOption.value = option.value;
     newOption.text = option.color;
     select.appendChild(newOption);
   })
