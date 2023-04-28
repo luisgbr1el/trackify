@@ -15,6 +15,13 @@ function selector(divId = String, label = String, selectId = String, options = A
   select.className = "selector";
   div.appendChild(select);
 
+  // creating default disabled option
+  var defaultOption = document.createElement("option");
+  defaultOption.text = "Select theme";
+  defaultOption.disabled = true;
+  defaultOption.selected = true;
+  select.appendChild(defaultOption);
+  
   // creating options to selector
   options.forEach((option) => {
     var newOption = document.createElement("option");
