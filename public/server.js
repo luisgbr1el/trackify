@@ -38,6 +38,7 @@ function onPageLoad() {
       user();
       topTracks();
       topArtists();
+      selector("selectTheme", [ 'jade green', 'purple' ]);
 
       document.getElementById("topSection").style.display = 'block';
       document.getElementById("loadingSection").style.display = "none";
