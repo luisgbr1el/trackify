@@ -35,9 +35,30 @@ function onPageLoad() {
       document.getElementById("user").style.display = "none";
     }
     else {
+      
       user();
       topTracks();
       topArtists();
+      
+      // selector("selectThemeDiv", "Select theme", "selectTheme", [
+      //   {
+      //     color: "dark slate gray",
+      //     value: "#2F4F4F"
+      //   },
+      //   {
+      //     color: "byzantium",
+      //     value: "#702963"
+      //   }
+      // ]);
+
+      // var select = document.getElementById("selectTheme");
+      // topItems = document.getElementsByClassName("topItem");
+      
+      // select.onchange = function() {
+      //   topItems.forEach((item) => {
+      //     item.style.backgroundImage = `linear-gradient(to right, #111a1a6e, ${select.value})`
+      //   })
+      // }
 
       document.getElementById("topSection").style.display = 'block';
       document.getElementById("loadingSection").style.display = "none";

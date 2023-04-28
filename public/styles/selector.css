@@ -1,0 +1,16 @@
+.selector {
+  width: 15%;
+  line-height: 30px;
+  padding: 5px;
+  margin: 10px;
+  font-size: 12pt;
+  background-color: #1e1e24;
+  border: 1px #2F4F4F; solid;
+  color: aliceblue;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+#selectTheme, #selectThemeLabel {
+  display: inline-block;
+}
