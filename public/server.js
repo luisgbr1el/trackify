@@ -35,11 +35,11 @@ function onPageLoad() {
       document.getElementById("user").style.display = "none";
     }
     else {
-      
+
       user();
       topTracks();
       topArtists();
-      
+
       selector("selectThemeDiv", "Select theme", "selectTheme", [
         {
           color: "dark slate gray",
@@ -161,12 +161,12 @@ function handleTopTracksResponse() {
         url: item.external_urls.spotify
       })
     });
-    
+
     //var select = document.getElementById("selectTheme");
- 
+
     //select.onchange = function() {
       topList("top tracks", "(last month)", tracks, "topTracksList", "#2F4F4F");
-    //}      
+    //}
   }
   else if (this.status == 401) {
     //refreshAccessToken()
@@ -190,9 +190,9 @@ function handleTopArtistsResponse() {
       })
     });
 
-    //var select2 = document.getElementById("selectTheme");
-    
-    //select2.onchange = function() {
+    //var select = document.getElementById("selectTheme");
+
+    //select.onchange = function() {
       topList("top artists", "(last month)", artists, "topArtistsList", "#2F4F4F");
     //}
   }
