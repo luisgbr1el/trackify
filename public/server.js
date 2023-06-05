@@ -40,19 +40,20 @@ function onPageLoad() {
       topTracks();
       topArtists();
 
-      selector("selectThemeDiv", "Select theme", "selectTheme", [
-        {
-          color: "dark slate gray",
-          value: "#2F4F4F"
-        },
-        {
-          color: "byzantium",
-          value: "#702963"
-        }
-      ]);
+      // selector("selectThemeDiv", "Select theme", "selectTheme", [
+      //   {
+      //     color: "dark slate gray",
+      //     value: "#2F4F4F"
+      //   },
+      //   {
+      //     color: "byzantium",
+      //     value: "#702963"
+      //   }
+      // ]);
 
       document.getElementById("topSection").style.display = 'block';
       document.getElementById("loadingSection").style.display = "none";
+
     }
   }
 }
@@ -149,6 +150,8 @@ function callApi(method, url, body, callback) {
   xhr.onload = callback;
 }
 
+let select;
+
 function handleTopTracksResponse() {
   if (this.status == 200) {
     var data = JSON.parse(this.responseText);
@@ -162,8 +165,8 @@ function handleTopTracksResponse() {
       })
     });
 
-    //var select = document.getElementById("selectTheme");
-
+    //select = document.getElementById("selectTheme");
+    
     //select.onchange = function() {
       topList("top tracks", "(last month)", tracks, "topTracksList", "#2F4F4F");
     //}
@@ -190,8 +193,8 @@ function handleTopArtistsResponse() {
       })
     });
 
-    //var select = document.getElementById("selectTheme");
-
+    //select = document.getElementById("selectTheme");
+    
     //select.onchange = function() {
       topList("top artists", "(last month)", artists, "topArtistsList", "#2F4F4F");
     //}
